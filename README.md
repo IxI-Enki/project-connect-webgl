@@ -1,7 +1,7 @@
 <div align="center">
   <img src="img/connect-vector.svg" alt="Index Page Logo" width="300"/>
 
-# [ Connect ](https://ixi-enki.github.io/project-connect-webgl/)
+# [ visit Webpage ](https://ixi-enki.github.io/project-connect-webgl/)
 </div>
 
 ## Dateien und ihre Funktionen
