@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="img/connect-vector.svg" alt="Index Page Logo" width="300"/>
+  <img src="img/connect-vector.svg" alt="Index Page Logo" width="600"/>
 
 # [ visit Webpage ](https://ixi-enki.github.io/project-connect-webgl/)
 </div>
