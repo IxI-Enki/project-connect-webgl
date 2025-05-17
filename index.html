@@ -130,10 +130,44 @@
             margin-left: 10px;
             vertical-align: middle;
         }
+
+        .fox-image {
+            position: fixed;
+            bottom: 60px;
+            left: 20px;
+            width: 100px;
+            z-index: 100;
+            animation: shake 3s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .subtle-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(50, 50, 50, 0.1) 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+            animation: movePattern 15s linear infinite;
+        }
+
+        @keyframes movePattern {
+            from { background-position: 0 0; }
+            to { background-position: 20px 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="subtle-pattern"></div>
     <div class="text-center mt-3">
         <img src="img/connect-vector.svg" alt="Logo" class="logo">
     </div>
@@ -148,6 +182,7 @@
             </div>
         </div>
     </div>
+    <img src="fuchs.png" alt="Fox" class="fox-image">
     <div class="footer">
         <div class="footer-links">
             <a href="https://github.com/IxI-Enki" target="_blank">GitHub</a>
