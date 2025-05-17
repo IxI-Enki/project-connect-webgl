@@ -14,9 +14,9 @@
         }
 
         .dark-theme {
-            --bg-color: #1a1a1a; /* Dunkler Hintergrund */
-            --card-bg-color: #2d2d2d; /* Dunkler Kartenhintergrund */
-            --text-color: #e0e0e0; /* Hellere Textfarbe für bessere Lesbarkeit */
+            --bg-color: #1a1a1a;
+            --card-bg-color: #2d2d2d;
+            --text-color: #e0e0e0;
         }
 
         body {
@@ -41,6 +41,23 @@
             position: fixed;
             top: 20px;
             right: 20px;
+        }
+
+        .dev-panel {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 70px;
+            width: 250px;
+            background-color: var(--card-bg-color);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .dev-panel.show {
+            display: block;
         }
     </style>
 </head>
@@ -74,6 +91,22 @@
     </div>
 
     <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Light Mode</button>
+    <button class="btn btn-secondary theme-switch" style="top: 60px;" onclick="toggleDevPanel()">Dev Panel</button>
+
+    <div class="dev-panel" id="devPanel">
+        <h5 class="text-center mb-4">Dev Login</h5>
+        <form onsubmit="event.preventDefault(); devLogin();">
+            <div class="form-group">
+                <label for="dev-username">Username:</label>
+                <input type="text" class="form-control" id="dev-username" required>
+            </div>
+            <div class="form-group">
+                <label for="dev-password">Password:</label>
+                <input type="password" class="form-control" id="dev-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -104,6 +137,17 @@
 
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
+        }
+
+        function toggleDevPanel() {
+            const devPanel = document.getElementById('devPanel');
+            devPanel.classList.toggle('show');
+        }
+
+        function devLogin() {
+            const username = document.getElementById('dev-username').value;
+            const password = document.getElementById('dev-password').value;
+            alert(`Dev Login attempted with Username: ${username} and Password: ${password}`);
         }
     </script>
 </body>
