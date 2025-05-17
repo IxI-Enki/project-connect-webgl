@@ -8,73 +8,82 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg-color: #1e1e1e;
-            --text-color: #e0e0e0;
+            --bg-color: #000000;
+            --card-bg-color: #121212;
+            --text-color: #a0a0a0;
+            --accent-color: #3a3a3a;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
             margin-top: 50px;
+            position: relative;
+            z-index: 1;
         }
 
         .card {
             background-color: var(--card-bg-color);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
             animation: fadeIn 1.5s;
+            border: 1px solid var(--accent-color);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo {
             display: block;
             margin: 0 auto;
             width: 150px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
         .start-button {
             margin-top: 20px;
-            animation: pulse 2s infinite;
+            background-color: var(--accent-color);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: #4a4a4a;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(30, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 0;
+            pointer-events: none;
+            animation: pulse 8s infinite;
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
     </style>
 </head>
 <body>
+    <div class="background-animation"></div>
     <div class="text-center mt-3">
         <img src="logo.jpg" alt="Logo" class="logo">
     </div>
