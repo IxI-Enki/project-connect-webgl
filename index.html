@@ -14,9 +14,9 @@
         }
 
         .dark-theme {
-            --bg-color: #343a40;
-            --card-bg-color: #495057;
-            --text-color: #f8f9fa;
+            --bg-color: #1a1a1a; /* Dunkler Hintergrund */
+            --card-bg-color: #2d2d2d; /* Dunkler Kartenhintergrund */
+            --text-color: #e0e0e0; /* Hellere Textfarbe für bessere Lesbarkeit */
         }
 
         body {
@@ -44,7 +44,7 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-theme">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Dark Mode</button>
+    <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Light Mode</button>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
