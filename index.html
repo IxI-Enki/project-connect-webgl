@@ -48,9 +48,9 @@
             position: fixed;
             right: 20px;
             top: 70px;
-            width: 250px;
-            background-color: var(--card-bg-color);
-            padding: 15px;
+            width: 200px; /* Smaller width */
+            background-color: #6c757d; /* Different color */
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
@@ -59,9 +59,18 @@
         .dev-panel.show {
             display: block;
         }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+        }
     </style>
 </head>
 <body class="dark-theme">
+    <div class="text-center mt-3">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
