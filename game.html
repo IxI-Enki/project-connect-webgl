@@ -8,28 +8,35 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg-color: #1e1e1e;
-            --text-color: #e0e0e0;
+            --bg-color: #000000;
+            --card-bg-color: #121212;
+            --text-color: #a0a0a0;
+            --accent-color: #3a3a3a;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
             margin-top: 50px;
+            position: relative;
+            z-index: 1;
         }
 
         .card {
             background-color: var(--card-bg-color);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
             animation: slideIn 1.5s;
+            border: 1px solid var(--accent-color);
         }
 
         @keyframes slideIn {
@@ -49,12 +56,13 @@
             right: 20px;
             top: 70px;
             width: 200px;
-            background-color: #6c757d;
+            background-color: var(--accent-color);
             padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
             animation: fadeIn 1s;
+            border: 1px solid var(--text-color);
         }
 
         .dev-panel.show {
@@ -65,16 +73,30 @@
             display: block;
             margin: 0 auto;
             width: 150px;
-            animation: rotate 4s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(30, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 0;
+            pointer-events: none;
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
     </style>
 </head>
 <body>
+    <div class="background-animation"></div>
     <div class="text-center mt-3">
         <img src="logo.jpg" alt="Logo" class="logo">
     </div>
@@ -107,7 +129,6 @@
     </div>
 
     <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Light Mode</button>
-    <button class="btn btn-secondary theme-switch" style="top: 60px;" onclick="toggleDevPanel()">Dev Panel</button>
 
     <div class="dev-panel" id="devPanel">
         <h5 class="text-center mb-4">Dev Login</h5>
