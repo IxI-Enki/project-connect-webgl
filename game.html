@@ -152,6 +152,13 @@
             const password = document.getElementById('dev-password').value;
             alert(`Dev Login attempted with Username: ${username} and Password: ${password}`);
         }
+
+        // Event-Listener für Tastenkombination
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'd') {
+                toggleDevPanel();
+            }
+        });
     </script>
 </body>
 </html>
