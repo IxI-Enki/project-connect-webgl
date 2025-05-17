@@ -7,16 +7,40 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg-color: #ffffff;
+            --text-color: #212529;
         }
+
+        .dark-theme {
+            --bg-color: #343a40;
+            --card-bg-color: #495057;
+            --text-color: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         .container {
             margin-top: 50px;
         }
+
         .card {
+            background-color: var(--card-bg-color);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
     </style>
 </head>
@@ -49,6 +73,8 @@
         </div>
     </div>
 
+    <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Dark Mode</button>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -74,6 +100,10 @@
             } else {
                 window.location.href = `game.html?role=player&room=${room}`;
             }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
         }
     </script>
 </body>
