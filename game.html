@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Game</title>
     <!-- Favicon -->
-    <link rel="icon" href="fuchs.apng" type="image/apng">
+    <link rel="icon" href="img/connect-vector.svg" type="image/svg+xml">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -110,12 +110,44 @@
             border-color: #4a4a4a;
             box-shadow: 0 0 10px rgba(74, 74, 74, 0.5);
         }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--card-bg-color);
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid var(--accent-color);
+        }
+
+        .footer-links {
+            margin: 10px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .user-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
     <div class="background-animation"></div>
     <div class="text-center mt-3">
-        <img src="logo.jpg" alt="Logo" class="logo">
+        <img src="img/connect-vector.svg" alt="Logo" class="logo">
     </div>
     <div class="container">
         <div class="row justify-content-center">
@@ -142,6 +174,12 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/IxI-Enki" target="_blank">GitHub</a>
+            <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="User Image" class="user-image">
         </div>
     </div>
 
