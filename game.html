@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/connect-vector.svg" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="background-animation"></div>
+    <div class="subtle-pattern"></div>
+    <div class="text-center mt-3">
+        <img src="img/connect-vector.svg" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <h1 class="text-center mb-4">Card Game</h1>
+                    <form onsubmit="event.preventDefault(); startGame();">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role:</label>
+                            <select class="form-control" id="role" required>
+                                <option value="spectator">Spectator</option>
+                                <option value="player">Player</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="roomInput" style="display: none;">
+                            <label for="room">Room:</label>
+                            <input type="text" class="form-control" id="room">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block start-button">Start Game</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <img src="img/fuchs.png" alt="Fox" class="fox-image">
+    <div class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/IxI-Enki" target="_blank">GitHub</a>
+            <img src="https://avatars.githubusercontent.com/u/138018029?v=4" alt="User Image" class="user-image">
+        </div>
+    </div>
+    -->
+    <button class="btn btn-secondary theme-switch" onclick="toggleTheme()">Toggle Light Mode</button>
+
+    <div class="dev-panel" id="devPanel">
+        <h5 class="text-center mb-4">Dev Login</h5>
+        <form onsubmit="event.preventDefault(); devLogin();">
+            <div class="form-group">
+                <label for="dev-username">Username:</label>
+                <input type="text" class="form-control" id="dev-username" required>
+            </div>
+            <div class="form-group">
+                <label for="dev-password">Password:</label>
+                <input type="password" class="form-control" id="dev-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
