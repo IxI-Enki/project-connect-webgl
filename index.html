@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <script>
+        function startGame() {
+            const username = document.getElementById('username').value;
+            const role = document.getElementById('role').value;
+            const room = document.getElementById('room').value;
+
+            if (role === 'spectator') {
+                window.location.href = `game.html?role=spectator&room=${username}-${Math.random().toString(36).substring(7)}`;
+            } else {
+                window.location.href = `game.html?role=player&room=${room}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Card Game</h1>
+    <form onsubmit="event.preventDefault(); startGame();">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="role">Role:</label>
+        <select id="role" required>
+            <option value="spectator">Spectator</option>
+            <option value="player">Player</option>
+        </select>
+        <br>
+        <div id="roomInput" style="display: none;">
+            <label for="room">Room:</label>
+            <input type="text" id="room">
+        </div>
+        <button type="submit">Start Game</button>
+    </form>
+
+    <script>
+        document.getElementById('role').addEventListener('change', function() {
+            const roomInput = document.getElementById('roomInput');
+            if (this.value === 'player') {
+                roomInput.style.display = 'block';
+            } else {
+                roomInput.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
